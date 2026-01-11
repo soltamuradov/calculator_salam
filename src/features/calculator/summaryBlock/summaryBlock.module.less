@@ -1,0 +1,80 @@
+@import "../../../styles/global.less";
+
+@media (min-width: 360px) {
+  .summaryWrapper {
+    background: @primary;
+    border-radius: 16px;
+    color: white;
+    padding: 16px;
+    margin: 24px 0;
+
+    :global(.ant-divider) {
+      border-color: #8cadf9;
+      margin: 16px 0;
+    }
+  }
+
+  .summaryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+
+    .value {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+
+    .sumValue {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .summaryItem {
+    font-size: 14px;
+    line-height: 18px;
+
+    .value {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    .sumValue {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .summaryWrapper {
+    padding: 32px;
+  }
+  .summaryItem {
+    font-size: 20px;
+    line-height: 24px;
+
+    .value {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    .sumValue {
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+
+  .summaryWrapper :global(.ant-divider) {
+    margin: 24px 0;
+  }
+}

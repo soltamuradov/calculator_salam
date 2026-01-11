@@ -1,0 +1,140 @@
+@media (min-width: 360px) {
+  .footerWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .firstBlock,
+  .secondBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    .logoIcon {
+      width: 40px;
+      border-radius: 14px;
+    }
+  }
+
+  .footerInfo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+
+  .phone {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .text {
+    font-size: 8px;
+    font-weight: 400;
+  }
+
+  .secondBlock {
+    font-size: 12px;
+    line-height: 16px;
+
+    :global(.anticon) {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .companyName {
+    width: 60%;
+  }
+}
+
+@media (min-width: 900px) {
+  .logo {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 30px;
+    column-gap: 15px;
+
+    .logoIcon {
+      width: 56px;
+    }
+  }
+
+  .footerInfo {
+    row-gap: 12px;
+
+    .phone {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .text {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .secondBlock {
+    font-size: 20px;
+    line-height: 24px;
+
+    :global(.anticon) {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .logo {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 36px;
+    column-gap: 24px;
+
+    .logoIcon {
+      width: 70px;
+    }
+  }
+
+  .footerInfo {
+    row-gap: 12px;
+
+    .phone {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .text {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  .secondBlock {
+    font-size: 24px;
+    line-height: 28px;
+
+    :global(.anticon) {
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}

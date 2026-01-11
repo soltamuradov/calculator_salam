@@ -1,0 +1,136 @@
+@media (min-width: 360px) {
+  .categorySelect {
+    height: 48px;
+    width: 100%;
+    margin: 24px 0;
+
+    :global {
+      .ant-select-selector {
+        border-radius: 16px;
+      }
+      .ant-select-selection-placeholder {
+        font-size: 12px;
+        line-height: 16px;
+        text-align: left;
+      }
+
+      .ant-select-selection-item {
+        font-size: 12px;
+        line-height: 16px;
+        text-align: start;
+        padding-left: 16px !important;
+        color: white;
+      }
+
+      .ant-select-arrow {
+        padding-right: 16px !important;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  .customPopup {
+    font-size: 12px;
+    line-height: 16px;
+
+    :global(.ant-divider) {
+      border-block-start: 1px solid #e5e5f2;
+      margin: 0;
+    }
+  }
+
+  .categoryPopupWrap {
+    padding: 0;
+  }
+
+  .categoryWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 16px;
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background: #f5f5f5;
+    }
+  }
+  .categoryIcon {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .categorySelect {
+    height: 60px;
+    :global {
+      .ant-select-selection-placeholder {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .ant-select-selection-item {
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 5px !important;
+      }
+    }
+  }
+
+  .customPopup {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .categoryWrap {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .categorySelect {
+    height: 96px;
+    :global {
+      .ant-select-selection-placeholder {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      .ant-select-selection-item {
+        font-size: 20px;
+        line-height: 24px;
+        padding-left: 32px !important;
+      }
+
+      .ant-select-arrow {
+        padding-right: 32px !important;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  .customPopup {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .categoryWrap {
+    padding: 32px;
+  }
+
+  .categoryIcon {
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

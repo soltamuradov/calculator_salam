@@ -1,0 +1,125 @@
+@import "../../../styles/global.less";
+
+@media (min-width: 360px) {
+  .slider {
+    :global {
+      .ant-slider {
+        .ant-slider-rail,
+        .ant-slider-track,
+        .ant-slider-step {
+          height: 6px;
+        }
+        .ant-slider-rail {
+          background: #88c3a8;
+        }
+        .ant-slider-track {
+          background: white;
+        }
+        .ant-slider-handle {
+          &::after {
+            box-shadow: none;
+            width: 16px;
+            height: 16px;
+            inset-block-start: -3px;
+          }
+        }
+      }
+    }
+  }
+
+  .sliderTitleWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+    color: white;
+    text-wrap: nowrap;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+
+    input {
+      background: none;
+      border: none;
+      color: white;
+      text-align: end;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 500;
+      background: #88c3a8;
+      max-width: 210px;
+      border-radius: 10px;
+
+      &:hover {
+        background: #afd7c5;
+      }
+      &:focus-within {
+        background: #88c3a8;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .slider {
+    :global {
+      .ant-slider {
+        .ant-slider-rail,
+        .ant-slider-track,
+        .ant-slider-step {
+          height: 8px;
+        }
+        .ant-slider-handle {
+          &::after {
+            width: 20px;
+            height: 20px;
+            inset-block-start: -4px;
+          }
+        }
+      }
+    }
+  }
+  .sliderTitleWrapper {
+    font-size: 14px;
+    line-height: 18px;
+
+    input {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .slider {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    :global {
+      .ant-slider {
+        .ant-slider-rail,
+        .ant-slider-track,
+        .ant-slider-step {
+          height: 10px;
+        }
+        .ant-slider-handle {
+          &::after {
+            width: 24px;
+            height: 24px;
+            inset-block-start: -4px;
+          }
+        }
+      }
+    }
+  }
+  .sliderTitleWrapper {
+    font-size: 20px;
+    line-height: 24px;
+
+    input {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+}
