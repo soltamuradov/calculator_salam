@@ -8,8 +8,8 @@ const TERM_COUNTS: number[] = [
 ] as const;
 
 const CONTACTS_INFO = {
-  phoneNumber: "+7 (960) 440-26-56",
-  address: "улица Вахи Алиева, 12Б, Грозный",
+  phoneNumber: "+7 (928) 886-33-33",
+  address: "улица У. Кадырова, 46 ТЦ «Мегаполис», Грозный",
 } as const;
 
 type TariffKeysType = "light" | "small" | "medium" | "large";

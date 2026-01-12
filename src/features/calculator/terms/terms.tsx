@@ -1,31 +1,27 @@
-import React, { type FC, type PropsWithChildren } from "react";
-import Icon from "@ant-design/icons";
+import { type FC, type PropsWithChildren } from "react";
 
-import { moonIcon, likeIcon, userIcon, mapIcon, walletIcon, notifyIcon } from "./icons";
+import styles from "../calculator.module.less";
 
 import cn from "./terms.module.less";
 
 type TermType = {
   id: number;
   title: string;
-  icon: () => React.JSX.Element;
 };
 
 const terms: TermType[] = [
-  { id: 1, title: "Рассрочка без банка, по принципам Ислама", icon: moonIcon },
-  { id: 2, title: "Без штрафов и пеней, не начисляем проценты", icon: likeIcon },
-  { id: 3, title: "Рассрочка предоставляется лицам старше 21 г.", icon: userIcon },
-  { id: 4, title: "Необходима прописка в Чеченской республике", icon: mapIcon },
-  { id: 5, title: "Платежеспособность", icon: walletIcon },
-  { id: 6, title: "Уведомление одного из родных", icon: notifyIcon },
+  { id: 1, title: "Наличие паспорта" },
+  { id: 2, title: "Поручитель" },
+  { id: 3, title: "Прописка по ЧР" },
+  { id: 4, title: "Гибкий взнос" },
+  { id: 5, title: "Возраст от 20 лет" },
 ] as const;
 
 type Props = {};
 
-const Term: FC<Partial<TermType> & PropsWithChildren> = ({ icon, children }) => {
+const Term: FC<Partial<TermType> & PropsWithChildren> = ({ children }) => {
   return (
     <div className={cn.termWrap}>
-      <Icon component={icon} />
       <div>{children}</div>
     </div>
   );
@@ -34,11 +30,12 @@ const Term: FC<Partial<TermType> & PropsWithChildren> = ({ icon, children }) => 
 const Terms: FC<Props> = () => {
   return (
     <div className={cn.termsWrap}>
-      {terms.map((term) => (
-        <Term key={term.id} icon={term.icon}>
-          {term.title}
-        </Term>
-      ))}
+      <div className={styles.calculatorTitle}>Условия</div>
+      <div className={cn.terms}>
+        {terms.map((term) => (
+          <Term key={term.id}>{term.title}</Term>
+        ))}
+      </div>
     </div>
   );
 };

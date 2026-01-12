@@ -1,8 +1,14 @@
+@import '../../../styles/global.less';
+
 @media (min-width: 360px) {
   .contactsWrap {
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     row-gap: 24px;
+    background: @bgColor;
+    padding: 16px;
+    border-radius: 24px;
   }
 
   .contactList {
@@ -11,28 +17,13 @@
     flex-wrap: wrap;
     flex-direction: column;
     margin: 0 auto;
+    color: white;
   }
 
   .contactWrap {
     display: flex;
     column-gap: 8px;
     align-items: center;
-  }
-
-  .contactWriteBtn {
-    max-width: max-content;
-    justify-content: start;
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 20px;
-    color: black;
-
-    :global(.anticon) {
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
   }
 
   .map {

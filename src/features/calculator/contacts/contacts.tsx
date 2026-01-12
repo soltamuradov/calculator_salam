@@ -1,12 +1,13 @@
 import { type FC, type PropsWithChildren } from "react";
 import { observer } from "mobx-react-lite";
 import Icon from "@ant-design/icons";
-import { Button } from "antd";
 
 import { useCalculator } from "../../../models/calculatorStore";
 
 import { Map } from "./map";
-import { callIcon, instagramIcon, mailIcon, mapIcon, whatsappIcon } from "./icons";
+import { callIcon, mapIcon } from "./icons";
+
+import styles from '../calculator.module.less';
 
 import cn from "./contacts.module.less";
 
@@ -27,15 +28,11 @@ const Contact: FC<Partial<ContactType> & PropsWithChildren> = ({ icon, children,
 };
 
 const ContactList: FC = observer(() => {
-  const { phoneNumber, address, mail, insta } = useCalculator();
-
-  const whatsapp = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
+  const { phoneNumber, address } = useCalculator();
 
   const contacts: ContactType[] = [
     { id: 1, title: phoneNumber, icon: callIcon },
     { id: 2, title: address, icon: mapIcon },
-    { id: 3, title: mail, icon: mailIcon },
-    { id: 4, title: insta, icon: instagramIcon, style: { margin: "0 0 0 -1px", columnGap: '7px' } },
   ] as const;
 
   return (
@@ -45,13 +42,6 @@ const ContactList: FC = observer(() => {
           {contact.title}
         </Contact>
       ))}
-      <Button
-        className={cn.contactWriteBtn}
-        onClick={() => (location.href = whatsapp)}
-        icon={<Icon component={whatsappIcon} />}
-      >
-        Написать в WhatsApp
-      </Button>
     </div>
   );
 });
@@ -59,6 +49,7 @@ const ContactList: FC = observer(() => {
 const Contacts: FC = () => {
   return (
     <div className={cn.contactsWrap}>
+      <div className={styles.calculatorTitle}>Контакты</div>
       <Map />
       <ContactList />
     </div>

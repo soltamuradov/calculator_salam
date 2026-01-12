@@ -2,15 +2,15 @@
 
 @media (min-width: 360px) {
   .summaryWrapper {
-    background: @primary;
     border-radius: 16px;
+    border: 1px solid #4C504D;
     color: white;
     padding: 16px;
     margin: 24px 0;
 
     :global(.ant-divider) {
-      border-color: #8cadf9;
-      margin: 16px 0;
+      border: none;
+      margin: 6px 0;
     }
   }
 
@@ -32,6 +32,9 @@
       font-size: 24px;
       line-height: 28px;
       font-weight: 600;
+      background: @primary;
+      padding: 4px 12px;
+      border-radius: 30px;
     }
   }
 }

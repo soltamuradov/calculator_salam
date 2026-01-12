@@ -34,9 +34,9 @@ const Calculator: FC = observer(() => {
   return (
     <div className={cn.calculatorWrapper}>
       {contextHolder}
-      <div className={cn.calculatorTitle}>Рассчитайте рассрочку</div>
 
       <div className={cn.calculatorContent}>
+        <div className={cn.calculatorTitle}>Рассчитайте рассрочку</div>
         <div className={cn.leftBlock}>
           <Category />
           <div className={cn.slidersBlock}>
@@ -85,9 +85,7 @@ const Calculator: FC = observer(() => {
           </Button>
         </div>
       </div>
-      <div className={cn.calculatorTitle}>Условия рассрочки</div>
       <Terms />
-      <div className={cn.calculatorTitle}>Контакты</div>
       <Contacts />
       <ProposalModal show={showModal} close={() => setShowModal(false)} openNotification={openNotification} />
     </div>
