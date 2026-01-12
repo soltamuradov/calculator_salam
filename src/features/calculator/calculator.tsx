@@ -34,55 +34,56 @@ const Calculator: FC = observer(() => {
   return (
     <div className={cn.calculatorWrapper}>
       {contextHolder}
-
-      <div className={cn.calculatorContent}>
+      <div className={cn.calculatorContentWrapper}>
         <div className={cn.calculatorTitle}>Рассчитайте рассрочку</div>
-        <div className={cn.leftBlock}>
-          <Category />
-          <div className={cn.slidersBlock}>
-            <SliderCost
-              title="Стоимость товара"
-              unit={calc.cost > 0 ? " ₽" : undefined}
-              min={calc.minMaxAmount[0]}
-              max={calc.minMaxAmount[1]}
-              value={calc.cost}
-              setValue={calc.setCost}
-              disabled={calc.disabled}
-              tooltip={calc.disabledTooltip}
-            />
-            <SliderCost
-              title="Первоначальный взнос"
-              value={calc.initialFee}
-              unit={calc.initialFee > 0 ? " ₽" : undefined}
-              min={calc.minInitialFeeForMinInput}
-              max={calc.cost * 0.9}
-              setValue={calc.setInitialFee}
-              disabled={calc.disabled}
-              tooltip={calc.disabledTooltip}
-            />
-            <Slider
-              title="Срок рассрочки"
-              min={calc.minMaxTerm[0]}
-              max={calc.minMaxTerm[1]}
-              unit={calc.term > 0 ? getPluralText(calc.term, [" месяц", " месяца", " месяцев"]) : undefined}
-              value={calc.term}
-              setValue={(v) => calc.setTerm(v as TermType)}
-              disabled={calc.disabled}
-              tooltip={calc.disabledTooltip}
-            />
+        <div className={cn.calculatorContent}>
+          <div className={cn.leftBlock}>
+            <Category />
+            <div className={cn.slidersBlock}>
+              <SliderCost
+                title="Стоимость товара"
+                unit={calc.cost > 0 ? " ₽" : undefined}
+                min={calc.minMaxAmount[0]}
+                max={calc.minMaxAmount[1]}
+                value={calc.cost}
+                setValue={calc.setCost}
+                disabled={calc.disabled}
+                tooltip={calc.disabledTooltip}
+              />
+              <SliderCost
+                title="Первоначальный взнос"
+                value={calc.initialFee}
+                unit={calc.initialFee > 0 ? " ₽" : undefined}
+                min={calc.minInitialFeeForMinInput}
+                max={calc.cost * 0.9}
+                setValue={calc.setInitialFee}
+                disabled={calc.disabled}
+                tooltip={calc.disabledTooltip}
+              />
+              <Slider
+                title="Срок рассрочки"
+                min={calc.minMaxTerm[0]}
+                max={calc.minMaxTerm[1]}
+                unit={calc.term > 0 ? getPluralText(calc.term, [" месяц", " месяца", " месяцев"]) : undefined}
+                value={calc.term}
+                setValue={(v) => calc.setTerm(v as TermType)}
+                disabled={calc.disabled}
+                tooltip={calc.disabledTooltip}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className={cn.rightBlock}>
-          <SummaryBlock />
-          <div className={cn.resultInfo}>
-            *Поручители: {calc.guarantorsCount}, Максимальная сумма:{" "}
-            {formatNumberCurrency(calc.minMaxAmount[1], undefined, "руб,")} Срок: от {calc.minMaxTerm[0]} до{" "}
-            {calc.minMaxTerm[1]} месяцев
+          <div className={cn.rightBlock}>
+            <SummaryBlock />
+            <div className={cn.resultInfo}>
+              *Поручители: {calc.guarantorsCount}, Максимальная сумма:{" "}
+              {formatNumberCurrency(calc.minMaxAmount[1], undefined, "руб,")} Срок: от {calc.minMaxTerm[0]} до{" "}
+              {calc.minMaxTerm[1]} месяцев
+            </div>
+            <Button className={cn.submitBtn} onClick={() => setShowModal(true)}>
+              Оформить рассрочку
+            </Button>
           </div>
-          <Button className={cn.submitBtn} onClick={() => setShowModal(true)}>
-            Оформить рассрочку
-          </Button>
         </div>
       </div>
       <Terms />

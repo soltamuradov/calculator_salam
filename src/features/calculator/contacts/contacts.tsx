@@ -7,7 +7,7 @@ import { useCalculator } from "../../../models/calculatorStore";
 import { Map } from "./map";
 import { callIcon, mapIcon } from "./icons";
 
-import styles from '../calculator.module.less';
+import styles from "../calculator.module.less";
 
 import cn from "./contacts.module.less";
 
@@ -15,7 +15,7 @@ type ContactType = {
   id: number;
   title: string;
   icon: () => React.JSX.Element;
-  style?: React.CSSProperties
+  style?: React.CSSProperties;
 };
 
 const Contact: FC<Partial<ContactType> & PropsWithChildren> = ({ icon, children, style }) => {
@@ -49,9 +49,11 @@ const ContactList: FC = observer(() => {
 const Contacts: FC = () => {
   return (
     <div className={cn.contactsWrap}>
-      <div className={styles.calculatorTitle}>Контакты</div>
+      <div className={cn.contactsInfoWrap}>
+        <div className={styles.calculatorTitle}>Контакты</div>
+        <ContactList />
+      </div>
       <Map />
-      <ContactList />
     </div>
   );
 };
