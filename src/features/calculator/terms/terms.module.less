@@ -1,4 +1,4 @@
-@import '../../../styles/global.less';
+@import "../../../styles/global.less";
 
 @media (min-width: 360px) {
   .termsWrap {
@@ -10,16 +10,17 @@
     .terms {
       margin-top: 24px;
       display: flex;
-      gap: 16px;
+      gap: 10px;
+      max-width: 500px;
       flex-wrap: wrap;
+      text-wrap: nowrap;
     }
   }
 
   .termWrap {
     padding: 12px;
-    // background: white;
     border-radius: 50px;
-    border: 1px solid #4C504D;
+    border: 1px solid #4c504d;
     text-align: start;
     color: white;
     display: flex;
@@ -29,49 +30,51 @@
   }
 }
 
-@media (min-width: 650px) {
-  // .termsWrap {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr);
-  //   gap: 12px;
-  // }
+@media (min-width: 670px) {
+  .termsWrap {
+    padding: 24px;
+    display: flex;
+
+    .title {
+      margin-top: 5px;
+    }
+    .terms {
+      margin: 0 0 0 auto;
+      max-width: initial;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      justify-self: end;
+    }
+  }
 }
 
 @media (min-width: 900px) {
+  .termsWrap {
+    padding: 36px;
+    .terms {
+      gap: 20px;
+    }
+  }
   .termWrap {
-    padding: 16px;
+    padding: 20px;
     font-size: 16px;
     line-height: 20px;
-
-    :global {
-      .anticon {
-        svg {
-          width: 32px;
-          height: 32px;
-        }
-      }
-    }
   }
 }
 
 @media (min-width: 1280px) {
   .termsWrap {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  .termWrap {
-    padding: 32px;
-    font-size: 24px;
-    line-height: 28px;
+    padding: 48px;
 
-    :global {
-      .anticon {
-        svg {
-          width: 56px;
-          height: 56px;
-        }
-      }
+    .terms {
+      gap: 26px;
+    }
+
+    .termWrap {
+      padding: 24px;
+      font-size: 20px;
+      line-height: 24px;
     }
   }
 }

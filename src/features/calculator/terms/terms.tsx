@@ -1,4 +1,5 @@
 import { type FC, type PropsWithChildren } from "react";
+import classNames from "classnames";
 
 import styles from "../calculator.module.less";
 
@@ -30,7 +31,7 @@ const Term: FC<Partial<TermType> & PropsWithChildren> = ({ children }) => {
 const Terms: FC<Props> = () => {
   return (
     <div className={cn.termsWrap}>
-      <div className={styles.calculatorTitle}>Условия</div>
+      <div className={classNames(styles.calculatorTitle, cn.title)}>Условия</div>
       <div className={cn.terms}>
         {terms.map((term) => (
           <Term key={term.id}>{term.title}</Term>
