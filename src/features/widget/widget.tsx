@@ -14,7 +14,7 @@ const Widget: FC = () => {
     <div className={cn.widgetWrapper}>
       <div className={cn.textBlock}>
         <div className={cn.title}>SALAM -</div>
-        <div className={cn.text}>Быстрое и удобное оформление рассрочки</div>
+        <div className={cn.text}>Быстрое и удобное <br /> оформление рассрочки</div>
         <Button className={cn.button}>Рассчитать рассрочку</Button>
       </div>
       <div className={cn.widget}>

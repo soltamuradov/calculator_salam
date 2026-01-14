@@ -157,17 +157,36 @@
 }
 
 @media (min-width: 900px) {
-  .widgetWrapper .widget {
-    .phones {
-      right: 0;
-      width: clamp(170px, 60%, 300px);
-      top: 44px;
+  .widgetWrapper {
+    column-gap: 25px;
+    .widget {
+      column-gap: 15px;
+      .phones {
+        right: 0;
+        width: clamp(170px, 60%, 300px);
+        top: 44px;
+      }
+
+      .gamepad {
+        left: 0;
+        width: clamp(180px, 55%, 300px);
+        top: 83px;
+      }
     }
 
-    .gamepad {
-      left: 0;
-      width: clamp(180px, 55%, 300px);
-      top: 83px;
+    .button {
+      height: 48px;
+    }
+
+    .title {
+      font-size: 48px;
+      line-height: 100%;
+    }
+
+    .text {
+      margin-top: 24px;
+      font-size: 32px;
+      line-height: 36px;
     }
   }
 }
@@ -175,8 +194,10 @@
 @media (min-width: 1200px) {
   .widgetWrapper {
     min-height: 300px;
+    column-gap: 30px;
 
     .widget {
+      column-gap: 20px;
       .subBlock {
         min-height: calc(100% - 155px);
       }
