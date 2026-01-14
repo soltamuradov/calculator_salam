@@ -5,9 +5,8 @@ import cn from "./widget.module.less";
 
 import phones from "../../assets/phones.png";
 import gamepad from "../../assets/gamepad.png";
-import stroi1 from "../../assets/stroi1.png";
-import stroi2 from "../../assets/stroi2.png";
 import robot from "../../assets/robot.png";
+import stroy from "../../assets/stroy.png";
 
 const Widget: FC = () => {
   return (
@@ -36,9 +35,8 @@ const Widget: FC = () => {
         <div className={cn.secondBlock}>
           <div className={cn.subBlock}>
             <div>Стройматериалы</div>
-            <div>
-              <img src={stroi1} className={cn.stroi1} />
-              <img src={stroi2} className={cn.stroi2} />
+            <div className={cn.stroy}>
+              <img src={stroy} />
             </div>
           </div>
           <div className={cn.subBlock}>

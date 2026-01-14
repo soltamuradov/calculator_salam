@@ -73,19 +73,15 @@
       line-height: 100%;
       width: 100%;
 
-      .stroi1,
-      .stroi2 {
+      .stroy {
         position: absolute;
-        bottom: 0;
-      }
-      .stroi1 {
-        right: 10px;
-        z-index: 1;
-      }
-
-      .stroi2 {
-        right: -158px;
         bottom: -15px;
+        right: 0;
+        width: clamp(100px, 50%, 130px);
+
+        img {
+          width: 100%;
+        }
       }
 
       .robot {
@@ -95,6 +91,10 @@
         display: flex;
         justify-content: center;
         right: 0;
+
+        img {
+          width: clamp(100px, 50%, 110px);
+        }
       }
     }
   }
@@ -116,12 +116,25 @@
 
       .phones {
         right: 0;
-        top: 102px;
+        top: 68px;
+        width: clamp(150px, 60%, 240px);
       }
 
       .gamepad {
         left: 0;
         top: 110px;
+      }
+
+      .stroy {
+        bottom: -15px;
+        right: 0;
+        width: clamp(140px, 50%, 150px);
+      }
+
+      .robot {
+        img {
+          width: clamp(130px, 60%, 150px);
+        }
       }
     }
 
@@ -178,6 +191,17 @@
         width: clamp(180px, 55%, 300px);
         top: 83px;
       }
+
+      .stroy {
+        bottom: -15px;
+        right: 0;
+        width: clamp(150px, 60%, 200px);
+      }
+      .robot {
+        img {
+          width: clamp(140px, 60%, 170px);
+        }
+      }
     }
 
     .button {
@@ -218,6 +242,12 @@
         left: 0;
         width: clamp(260px, 55%, 300px);
         top: 73px;
+      }
+
+      .robot {
+        img {
+          width: clamp(190px, 60%, 230px);
+        }
       }
     }
 
