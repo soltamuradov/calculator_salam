@@ -18,12 +18,19 @@ type ContactType = {
   style?: React.CSSProperties;
 };
 
-const Contact: FC<Partial<ContactType> & PropsWithChildren> = ({ icon, children, style }) => {
+const Contact: FC<Partial<ContactType> & PropsWithChildren> = ({ id, icon, children, style }) => {
+  let href: string = "";
+
+  if (id === 1) {
+    href = `tel:${(children as string).replace(/[^0-9+]/g, "")}`;
+  } else {
+    href = `https://yandex.ru/maps/-/CLdtm-16`;
+  }
   return (
-    <div className={cn.contactWrap} style={style}>
+    <a className={cn.contactWrap} style={style} href={href} target="_blank">
       <Icon component={icon} />
       <div>{children}</div>
-    </div>
+    </a>
   );
 };
 
@@ -38,7 +45,7 @@ const ContactList: FC = observer(() => {
   return (
     <div className={cn.contactList}>
       {contacts.map((contact) => (
-        <Contact key={contact.id} icon={contact.icon} style={contact.style}>
+        <Contact id={contact.id} key={contact.id} icon={contact.icon} style={contact.style}>
           {contact.title}
         </Contact>
       ))}
