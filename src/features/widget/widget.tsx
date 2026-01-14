@@ -1,4 +1,5 @@
 import { type FC } from "react";
+import { Button } from "antd";
 
 import cn from "./widget.module.less";
 
@@ -10,25 +11,38 @@ import robot from "../../assets/robot.png";
 
 const Widget: FC = () => {
   return (
-    <div className={cn.widget}>
-      <div className={cn.firstBlock}>
-        <div>Смартфоны</div>
-        <div>
-          <img className={cn.phones} src={phones} />
-          <img className={cn.gamepad} src={gamepad} />
-        </div>
+    <div className={cn.widgetWrapper}>
+      <div className={cn.textBlock}>
+        <div className={cn.title}>SALAM -</div>
+        <div className={cn.text}>Быстрое и удобное оформление рассрочки</div>
+        <Button className={cn.button}>Рассчитать рассрочку</Button>
       </div>
-      <div className={cn.secondBlock}>
-        <div className={cn.subBlock}>
-          <div>Стройматериалы</div>
+      <div className={cn.widget}>
+        <div className={cn.firstBlock}>
+          <div>Смартфоны</div>
           <div>
-            <img src={stroi1} className={cn.stroi1} />
-            <img src={stroi2} className={cn.stroi2} />
+            <div className={cn.phones}>
+              <img src={phones} />
+            </div>
+            <div className={cn.gamepad}>
+              <img src={gamepad} />
+            </div>
           </div>
         </div>
-        <div className={cn.subBlock}>
-          <div>Бытовая электроника</div>
-          <img src={robot} className={cn.robot} />
+        <div className={cn.secondBlock}>
+          <div className={cn.subBlock}>
+            <div>Стройматериалы</div>
+            <div>
+              <img src={stroi1} className={cn.stroi1} />
+              <img src={stroi2} className={cn.stroi2} />
+            </div>
+          </div>
+          <div className={cn.subBlock}>
+            <div>Бытовая электроника</div>
+            <div className={cn.robot}>
+              <img src={robot} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
