@@ -48,7 +48,7 @@ const ContactList: FC = observer(() => {
 
 const Contacts: FC = () => {
   return (
-    <div className={cn.contactsWrap}>
+    <div id='contacts' className={cn.contactsWrap}>
       <div className={cn.contactsInfoWrap}>
         <div className={styles.calculatorTitle}>Контакты</div>
         <ContactList />

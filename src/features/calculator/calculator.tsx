@@ -34,7 +34,7 @@ const Calculator: FC = observer(() => {
   return (
     <div className={cn.calculatorWrapper}>
       {contextHolder}
-      <div className={cn.calculatorContentWrapper}>
+      <div id="calculator" className={cn.calculatorContentWrapper}>
         <div className={cn.calculatorTitle}>Рассчитайте рассрочку</div>
         <div className={cn.calculatorContent}>
           <div className={cn.leftBlock}>

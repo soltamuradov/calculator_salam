@@ -30,7 +30,7 @@ const Term: FC<Partial<TermType> & PropsWithChildren> = ({ children }) => {
 
 const Terms: FC<Props> = () => {
   return (
-    <div className={cn.termsWrap}>
+    <div id='terms' className={cn.termsWrap}>
       <div className={classNames(styles.calculatorTitle, cn.title)}>Условия</div>
       <div className={cn.terms}>
         {terms.map((term) => (

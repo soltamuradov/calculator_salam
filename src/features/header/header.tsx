@@ -16,9 +16,9 @@ const Header: FC = observer(() => {
         <img src={logo} className={cn.logoIcon} />
       </div>
         <div className={cn.nav}>
-          <a href="#">Рассчитать</a>
-          <a href="#">Условия</a>
-          <a href="#">Контакты</a>
+          <a href="#calculator">Рассчитать</a>
+          <a href="#terms">Условия</a>
+          <a href="#contacts">Контакты</a>
         </div>
       <a className={cn.callIcon} href={`tel:${phoneNumber.replace(/[^0-9+]/g, "")}`} target="_blank">
         <Icon component={callIcon} />
