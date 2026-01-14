@@ -81,7 +81,7 @@ const Calculator: FC = observer(() => {
               {calc.minMaxTerm[1]} месяцев
             </div>
             <Button className={cn.submitBtn} onClick={() => setShowModal(true)}>
-              Оформить рассрочку
+              Оформить
             </Button>
           </div>
         </div>
