@@ -4,7 +4,8 @@
   .modal {
     :global {
       .ant-modal-content {
-        background: @primary;
+        background: white;
+        border-radius: 16px;
       }
 
       .ant-modal-header {
@@ -28,32 +29,27 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 16px;
-        color: #b7cdff;
-      }
-
-      .ant-modal-title,
-      .ant-form-item-label > label {
-        color: white;
+        color: #CCD4CC;
       }
     }
   }
 
   .input {
     height: 48px;
-    border-radius: 12px;
+    border-radius: 16px;
     border: none;
-    background: #88c3a8;
+    background: #F5F6F5;
 
     &:hover {
-      background: #afd7c5;
+      background: #b1b4b1;
     }
     &:focus-within {
-      background: #88c3a8;
+      background: #F5F6F5;
     }
   }
 
   .submit {
-    background: black;
+    background: @primary;
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
@@ -63,12 +59,16 @@
     height: 43px;
     border: none;
     margin-top: 24px;
+    border-radius: 50px;
   }
 }
 
 @media (min-width: 900px) {
   .modal {
     :global {
+      .ant-modal-content {
+        border-radius: 24px;
+      }
       .ant-modal-title {
         font-weight: 700;
         font-size: 40px;
@@ -91,6 +91,7 @@
     height: 80px;
     font-size: 20px;
     line-height: 24px;
+    border-radius: 24px;
   }
 
   .submit {
@@ -99,5 +100,16 @@
     padding: 24px;
     height: 72px;
     margin-top: 48px;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .modal {
+    :global {
+      .ant-modal-content {
+        border-radius: 48px;
+      }
+    }
   }
 }
