@@ -61,7 +61,7 @@ class CalculatorStore {
       disabledTooltip: computed,
       monthCoefficient: computed,
       guarantorsCount: computed,
-      minInitialFeeForMinInput: computed,
+      minMaxInitialFee: computed,
       isCostAboveMaxLoanAmountWithoutInitialFee: computed,
       setActiveCategoryId: action,
       setInitialFee: action,
@@ -74,7 +74,7 @@ class CalculatorStore {
 
     reaction(
       () => [this.cost, this.term],
-      () => this.setMinInitialFee()
+      () => this.setMinInitialFee(),
     );
   }
 
@@ -173,12 +173,20 @@ class CalculatorStore {
     return this.data === undefined;
   }
 
-  //процент минимального ПВ
+  //процент минимального ПВ при инициализации
   public get minInitialFee() {
     if (this.data === undefined || this.activeCategoryId === undefined) return 0;
     const item = this.data.find((el) => el.id === this.activeCategoryId);
     if (item === undefined) return 0;
     return item.terms.find((el) => el.month === this.term)?.minInitialFee ?? 0;
+  }
+
+  public get minMaxInitialFee() {
+    //тут используется minInitialFee не из termsб нужен для указания именно минимала в инпуте, а не установки первоначального значения
+    const minInitialFeeForMinInput =
+      percentToValue(this.isCostAboveMaxLoanAmountWithoutInitialFee ? (this.category?.minInitialFee ?? 0) : 0) *
+      this.cost;
+    return [minInitialFeeForMinInput, this.cost * 0.9];
   }
 
   public get monthCoefficient() {
@@ -228,10 +236,6 @@ class CalculatorStore {
 
   public get isCostAboveMaxLoanAmountWithoutInitialFee() {
     return this.cost >= (this.category?.maxLoanAmountWithoutInitialFee ?? 0);
-  }
-
-  public get minInitialFeeForMinInput() {
-    return percentToValue(this.isCostAboveMaxLoanAmountWithoutInitialFee ? this.minInitialFee : 0) * this.cost;
   }
 
   public setCost = (v: number) => {

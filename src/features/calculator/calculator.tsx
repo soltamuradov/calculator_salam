@@ -54,8 +54,8 @@ const Calculator: FC = observer(() => {
                 title="Первоначальный взнос"
                 value={calc.initialFee}
                 unit={calc.initialFee > 0 ? " ₽" : undefined}
-                min={calc.minInitialFeeForMinInput}
-                max={calc.cost * 0.9}
+                min={calc.minMaxInitialFee[0]}
+                max={calc.minMaxInitialFee[1]}
                 setValue={calc.setInitialFee}
                 disabled={calc.disabled}
                 tooltip={calc.disabledTooltip}
