@@ -3,7 +3,7 @@ import { useState, type FC } from "react";
 import { Button } from "antd";
 import useNotification from "antd/es/notification/useNotification";
 
-import { useCalculator, type TermType } from "../../models/calculatorStore";
+import { useCalculator } from "../../models/calculatorStore";
 import { SliderCost } from "../../elements/inputs/slider/sliderCost";
 import { Slider } from "../../elements/inputs/slider/slider";
 import { getPluralText } from "../../lib/getPluralText";
@@ -66,7 +66,7 @@ const Calculator: FC = observer(() => {
                 max={calc.minMaxTerm[1]}
                 unit={calc.term > 0 ? getPluralText(calc.term, [" месяц", " месяца", " месяцев"]) : undefined}
                 value={calc.term}
-                setValue={(v) => calc.setTerm(v as TermType)}
+                setValue={(v) => calc.setTerm(v)}
                 disabled={calc.disabled}
                 tooltip={calc.disabledTooltip}
               />

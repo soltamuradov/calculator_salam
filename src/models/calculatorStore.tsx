@@ -3,10 +3,6 @@ import { action, computed, makeObservable, observable, reaction, runInAction } f
 
 import { type CategoryTermsType, getCategoryTerms } from "../services/terms";
 
-const TERM_COUNTS: number[] = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-] as const;
-
 const CONTACTS_INFO = {
   phoneNumber: "+7 (928) 886-33-33",
   address: "улица У. Кадырова, 46 ТЦ «Мегаполис», Грозный",
@@ -26,8 +22,6 @@ const TARIFFS: Record<
   large: { guarantor: 2, maxCount: 1_000_000, term: [3, 12], withoutFee: false },
 };
 
-type TermType = (typeof TERM_COUNTS)[number];
-
 const percentToValue = (n: number) => n / 100;
 
 class CalculatorStore {
@@ -36,7 +30,7 @@ class CalculatorStore {
 
   public cost: number = 0; //Стоимость товара
   public initialFee: number = 0; //Первоначальный взнос
-  public term: TermType = 3; //Срок рассрочки
+  public term: number = 3; //Срок рассрочки
 
   constructor() {
     makeObservable(this, {
@@ -196,12 +190,9 @@ class CalculatorStore {
   }
 
   static formatData = (data: CategoryTermsType | undefined) => {
-    const coefficientMap = new Map<TermType, number>();
+    const coefficientMap = new Map<number, number>();
     for (const item of data?.terms ?? []) {
-      if (TERM_COUNTS.includes(item.month as TermType)) {
-        coefficientMap.set(item.month as TermType, item.charge);
-        // coefficientMap.set(item.month as TermType, isInitialFee ? item.chargeWithInitialFee : item.charge);
-      }
+      coefficientMap.set(item.month, item.charge);
     }
     return coefficientMap;
   };
@@ -245,7 +236,7 @@ class CalculatorStore {
   public setInitialFee = (v: number) => {
     this.initialFee = v;
   };
-  public setTerm = (v: TermType) => {
+  public setTerm = (v: number) => {
     this.term = v;
   };
 
@@ -276,4 +267,4 @@ const CalculatorStoreContextProvider: FC<{ children: ReactNode }> = ({ children 
   return <CalculatorStoreContext.Provider value={{ calculator }}>{children}</CalculatorStoreContext.Provider>;
 };
 
-export { CalculatorStoreContextProvider, useCalculator, CalculatorStore, type TermType };
+export { CalculatorStoreContextProvider, useCalculator, CalculatorStore };
